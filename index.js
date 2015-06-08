@@ -174,6 +174,9 @@ module.exports = function (derby, options) {
     // Inherit from Component
     extendComponent(constructor);
 
+    // Set namespace to the component if it's passed along
+    if(ns) constructor.prototype.ns = ns;
+
     // Load template view from filename
     if (constructor.prototype.view) {
       var viewFilename = constructor.prototype.view;
